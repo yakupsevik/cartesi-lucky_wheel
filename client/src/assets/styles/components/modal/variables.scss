@@ -1,0 +1,81 @@
+/*------------------------------------------------------------- */
+
+/* Modal - Variables */
+
+/* ------------------------------------------------------------- */
+
+/* General - Variables  */
+
+/* ------------------------------------------------------------- */
+
+/* Modal */
+$modal-background-color: rgba(0, 0, 0, 0.5);
+$modal-backdrop-blur: 15px;
+$modal-border-radius: 10px;
+
+/* Modal - Scrollbar */
+$scrollbar-width: 2px;
+$scrollbar-height: 2px;
+$scrollbar-track-background-color: rgba(255, 255, 255, 0.1);
+$scrollbar-track-border-radius: 6px;
+$scrollbar-thumb-background-color: #f8dc9f;
+$scrollbar-thumb-background-color-hover: #b49f71;
+$scrollbar-thumb-border-radius: 6px;
+
+/* ------------------------------------------------------------- */
+
+/* Modal - Head */
+
+/* ------------------------------------------------------------- */
+
+$modal-head-height: 80px;
+$modal-head-paddingTop: 30px;
+$modal-head-container-paddingLeft: 40px;
+$modal-head-container-paddingRight: 40px;
+$modal-head-title-container-gap: 20px;
+
+/* Modal - Head - Tag */
+$modal-head-tag-color: rgba(255, 255, 255, 0.6);
+$modal-head-tag-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$modal-head-tag-fontSize: 20px;
+$modal-head-tag-fontWeight: 400;
+
+/* Modal - Head - Title */
+$modal-head-title-color: #fff;
+$modal-head-title-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$modal-head-title-fontSize: 28px;
+$modal-head-title-fontSize-responsive: 20px;
+$modal-head-title-fontWeight: 700;
+
+/* Modal - Close Modal */
+$modal-close-modal-height: 24px;
+$modal-close-modal-width: 24px;
+$modal-close-modal-transition: all 300ms ease;
+
+/* Modal - Head - Seperator */
+$modal-head-seperator-width: calc(100% - 20px);
+$modal-head-seperator-height: 2px;
+$modal-head-seperator-marginTop: 10px;
+
+/* ------------------------------------------------------------- */
+
+/* Modal - Content */
+$modal-content-height: calc(100% - 80px);
+$modal-content-paddingLeft: 40px;
+$modal-content-paddingRight: 40px;
+$modal-content-paddingBottom: 40px;
+$modal-content-paddingTop: 30px;
+
+/* Modal - Content - Seperator - Background */
+$modal-content-seperator-background: linear-gradient(
+  90deg,
+  rgba(251, 214, 162, 0) 0%,
+  rgba(127, 92, 32, 0.5) 16.5%,
+  rgba(180, 152, 109, 0.75) 32.5%,
+  #e7d3b8 48%,
+  #806d42 65%,
+  rgba(172, 150, 111, 0.5) 83%,
+  rgba(158, 113, 44, 0) 100%
+);
+
+/* ------------------------------------------------------------- */

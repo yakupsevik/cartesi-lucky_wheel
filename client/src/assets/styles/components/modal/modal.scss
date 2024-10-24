@@ -1,0 +1,524 @@
+/*------------------------------------------------------------- */
+
+/* Imports */
+
+@import "./variables.scss";
+
+/* ------------------------------------------------------------- */
+
+/* Modal */
+
+.modal-with-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  position: absolute;
+  z-index: 2;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  .modal {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    z-index: 2;
+  }
+
+  /* Gladiator Info */
+  .gladiator-info {
+    width: 369px;
+    height: 634px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 28px;
+
+    -webkit-animation-name: fadeIn !important;
+    animation-name: fadeIn !important;
+    -webkit-animation-duration: 0.2s !important;
+    animation-duration: 0.2s !important;
+    -webkit-animation-fill-mode: both !important;
+    animation-fill-mode: both !important;
+
+    /* Gladiator Image Container */
+    .gladiator-image-container {
+      cursor: pointer;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      padding: 8px;
+      border: 6px solid #e4d19e;
+
+      transition: all 300ms ease;
+
+      &:hover {
+        box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Gladiator Container - Gladiator Image Container - Gladiator Image */
+      .gladiator-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0px 4px 4px 0px #00000040;
+      }
+
+      .blank-gladiator-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.025);
+      }
+    }
+
+    /* Gladiator Name */
+    .gladiator-name {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 27px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 0px 4px 4px #00000040;
+    }
+
+    /* Gladiator Stamina Bar Container */
+    .stamina__bar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      .bar-container {
+        position: relative;
+        width: 289px;
+        height: 26px;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        text-align: center;
+
+        .bar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          border-radius: 3px;
+          background: linear-gradient(-90deg, #994431 0%, #f8dc9f 100%);
+        }
+
+        .bar-value {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+
+      .refill-toolbar {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background: linear-gradient(-90deg, #994431 0%, #f8dc9f 100%);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(15px) !important;
+        border-radius: 10px !important;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        .requirements {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+
+          span {
+            font-size: 12px;
+          }
+        }
+
+        .range {
+          width: 50%;
+        }
+
+        .buttons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+
+          button {
+            font-size: 12px;
+            font-weight: 400;
+            background: #994431;
+            color: #f8dc9f;
+            border-radius: 10px;
+            padding-left: 6px;
+            padding-right: 6px;
+            box-shadow: 0px 0px 12px 0px #f8dc9f17;
+
+            transition: all 300ms ease;
+
+            &:hover {
+              color: #fff;
+              box-shadow: 0px 0px 12px 0px #f8dc9f62;
+            }
+          }
+        }
+      }
+
+      .refill-button {
+        cursor: pointer;
+        width: 78px;
+        height: 31px;
+        border-radius: 5px;
+        border: 2px solid #642e22;
+        background: linear-gradient(276.6deg, rgba(255, 101, 67, 0.4) 0%, rgba(153, 68, 49, 0.24) 75.09%, rgba(153, 68, 49, 0.4) 101.47%);
+        box-shadow: 0px 4px 4px 0px #00000040;
+
+        display: grid;
+        place-items: center;
+
+        &:hover {
+          background: linear-gradient(276.6deg, rgba(255, 101, 67, 0.6) 0%, rgba(153, 68, 49, 0.36) 75.09%, rgba(153, 68, 49, 0.6) 101.47%);
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 21.57px;
+
+          text-align: center;
+          text-shadow: 0px 4px 4px #00000040;
+          background: linear-gradient(272.33deg, #ffffff 1.07%, #f8dc9f 100%) text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
+    /* Name and Button Container */
+    .name_and_button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .status {
+        cursor: default;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    /* Gladiator Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+      margin-top: 19px;
+
+      .stat {
+        text-align: center;
+
+        .stat-title {
+          color: #f8dc9f;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 22px;
+        }
+
+        .seperator {
+          width: 76px;
+          height: 2px;
+          margin-bottom: 7px;
+        }
+
+        .image-box {
+          position: relative;
+          width: 75px;
+          height: 75px;
+          min-width: 75px;
+          min-height: 75px;
+          border-radius: 50%;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          border: 2px solid #e4d19e;
+          background: rgba(0, 0, 0, 0.25);
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+
+          .stat-value {
+            position: absolute;
+            z-index: 2;
+            bottom: -18px;
+            left: 50%;
+            width: 50px;
+            height: 21px;
+            border-radius: 5px;
+            background: #f8dc9f;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            color: #503319;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            transform: translate(-50%, 0);
+            padding-top: 2px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .extra {
+              font-size: 12px;
+              color: #994431;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  z-index: 999999999;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background-color: $modal-background-color;
+  backdrop-filter: blur($modal-backdrop-blur);
+  border-radius: $modal-border-radius;
+
+  -webkit-animation-name: fadeIn !important;
+  animation-name: fadeIn !important;
+  -webkit-animation-duration: 0.2s !important;
+  animation-duration: 0.2s !important;
+  -webkit-animation-fill-mode: both !important;
+  animation-fill-mode: both !important;
+
+  /* ------------------------------------------------------------- */
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    background: none;
+  }
+
+  /* Hide the up and down arrows */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    /* Firefox */
+    -moz-appearance: textfield;
+  }
+
+  /* width */
+  *::-webkit-scrollbar {
+    width: $scrollbar-width;
+    height: $scrollbar-height;
+  }
+
+  /* Track */
+  *::-webkit-scrollbar-track {
+    border-radius: $scrollbar-track-border-radius;
+  }
+
+  /* Handle */
+  *::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-background-color;
+    border-radius: $scrollbar-thumb-border-radius;
+  }
+
+  /* Handle on hover */
+  *::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb-background-color-hover;
+  }
+
+  /* Display None */
+  .d-none {
+    display: none;
+  }
+
+  /* Display Flex */
+  .d-flex {
+    display: flex;
+  }
+
+  /* Display Block */
+  .d-block {
+    display: block;
+  }
+
+  /* ------------------------------------------------------------- */
+
+  /* Modal - Container */
+  .modal-container {
+    height: 100%;
+    width: 100%;
+
+    /* Modal - Head */
+    .modal-head {
+      height: $modal-head-height;
+      padding-top: $modal-head-paddingTop;
+
+      /* Modal - Head Container */
+      .modal-head-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: $modal-head-container-paddingLeft;
+        padding-right: $modal-head-container-paddingRight;
+
+        /* Modal - Head - Title Container */
+        .modal-head-title-container {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: $modal-head-title-container-gap;
+
+          /* Modal - Head - Tag */
+          .modal-head-tag {
+            color: $modal-head-tag-color;
+            text-shadow: $modal-head-tag-shadow;
+            font-size: $modal-head-tag-fontSize;
+            font-weight: $modal-head-tag-fontWeight;
+          }
+
+          /* Modal - Head - Title */
+          .modal-head-title {
+            color: $modal-head-title-color;
+            text-shadow: $modal-head-title-shadow;
+            font-size: $modal-head-title-fontSize;
+            font-weight: $modal-head-title-fontWeight;
+
+            transition: all 300ms ease;
+
+            @media screen and (max-width: 412px) {
+              font-size: $modal-head-title-fontSize-responsive;
+            }
+          }
+        }
+
+        /* Close Modal */
+        .close-modal {
+          cursor: pointer;
+
+          height: $modal-close-modal-height;
+          width: $modal-close-modal-width;
+
+          path {
+            transition: $modal-close-modal-transition;
+          }
+
+          &:hover {
+            path {
+              fill: red;
+            }
+          }
+        }
+      }
+
+      /* Modal - Head - Seperator */
+      .seperator {
+        object-fit: cover;
+        width: $modal-head-seperator-width;
+        height: $modal-head-seperator-height;
+        margin-top: $modal-head-seperator-marginTop;
+      }
+    }
+
+    /* Modal - Content */
+    .modal-content {
+      width: 100%;
+      height: $modal-content-height;
+      padding-left: $modal-content-paddingLeft;
+      padding-right: $modal-content-paddingRight;
+      padding-bottom: $modal-content-paddingBottom;
+      padding-top: $modal-content-paddingTop;
+    }
+  }
+
+  /* ------------------------------------------------------------- */
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------------- */

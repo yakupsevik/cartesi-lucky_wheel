@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+
+@import url("./reset.scss");
+@import url("./modals.scss");
+
+* {
+  font-family: "Cinzel", serif !important;
+  font-weight: 700;
+}
+
+/* width */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #dbaa69;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #dbaa69e1;
+}
+
+body {
+  /* ------------------------------------------------------------------------ */
+
+  .Toastify__toast {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 10px !important;
+    color: #fff !important;
+  }
+
+  /* ------------------------------------------------------------------------ */
+}
+
+.on-chain-page {
+  position: relative;
+  background-image: url(../images/backgrounds/map-background.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
