@@ -1,5 +1,6 @@
 // Import necessary modules
 import { createApp } from "@deroll/app";
+import { hexToString, stringToHex } from 'viem/utils';
 
 // Create the application
 const app = createApp({
@@ -24,9 +25,9 @@ function randomSelection(options: any) {
 // Handle input encoded in hex and select winner
 app.addAdvanceHandler(async ({ payload }: any) => {
   try {
-
+    let decodedPayload = hexToString(payload)
     // Parse the decoded payload as JSON
-    const { selectedMultiplier, multipliers } = JSON.parse(payload);
+    const { selectedMultiplier, multipliers } = JSON.parse(decodedPayload);
 
     // Find the user's selected multiplier option
     const userChoice = multipliers.find((option: any) => option.multiplier === selectedMultiplier);
@@ -38,12 +39,14 @@ app.addAdvanceHandler(async ({ payload }: any) => {
     // Check if user wins based on the probability of their selection
     if (Math.random() * 100 <= userChoice.probability) {
       // Use createReport to record the win
+      let reportContent = JSON.stringify({
+        message: "Won!",
+        resId: "won-spin",
+        multiplier: selectedMultiplier,
+      })
+      let reportPayload = stringToHex(reportContent)
       await app.createReport({
-        payload: JSON.stringify({
-          message: "Won!",
-          resId: "won-spin",
-          multiplier: selectedMultiplier,
-        })
+        payload: reportPayload
       });
 
       return "accept";
@@ -60,12 +63,15 @@ app.addAdvanceHandler(async ({ payload }: any) => {
     const lossResult = randomSelection(newOptions);
 
     // Use createReport to record the loss
+    let reportContent = JSON.stringify({
+      message: "Lose!",
+      resId: "lose-spin",
+      multiplier: lossResult.multiplier,
+    })
+    let reportPayload = stringToHex(reportContent)
+
     await app.createReport({
-      payload: JSON.stringify({
-        message: "Lose!",
-        resId: "lose-spin",
-        multiplier: lossResult.multiplier,
-      })
+      payload: reportPayload
     });
 
     return "accept";
